@@ -1,5 +1,6 @@
 import express from 'express'
 import workoutRoutes from './routes/workouts.js'
+import userRoutes from './routes/user.js'
 import mongoose from 'mongoose';
 
 const port = process.env.PORT || 4000
@@ -16,6 +17,7 @@ app.use((req, res, next) => {
 
 // routes
 app.use('/api/workouts', workoutRoutes)
+app.use('/api/user', userRoutes)
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
